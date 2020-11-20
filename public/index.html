@@ -13,6 +13,12 @@
   <script defer src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
+  <style>
+    #account-details {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
 </head>
 
 <body>
@@ -36,7 +42,7 @@
           var uid = user.uid;
           var phoneNumber = user.phoneNumber;
           var providerData = user.providerData;
-          user.getIdToken(true).then(function (accessToken) {
+          user.getIdToken().then(function (accessToken) {
             document.getElementById('sign-in-status').textContent = 'Signed in';
             document.getElementById('sign-in').textContent = 'Sign out';
             document.getElementById('account-details').textContent = JSON.stringify({
