@@ -8,92 +8,25 @@
   <title>Welcome to Firebase Hosting</title>
 
   <script defer src="/__/firebase/8.1.1/firebase-app.js"></script>
-  <script defer src="/__/firebase/8.1.1/firebase-auth.js"></script>
-  <script defer src="/__/firebase/8.1.1/firebase-firestore.js"></script>
-  <script defer src="/__/firebase/8.1.1/firebase-storage.js"></script>
   <script defer src="/__/firebase/init.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.js"></script>
-  <link defer type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.7.1/firebase-ui-auth.css" />
 
-  <style>
-    #account-details {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-  </style>
+  <style> body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding:1em; } </style>
 </head>
 
 <body>
 
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader">Loading...</div>
-  <div id="sign-in-status"></div>
-  <div id="sign-in"></div>
-  <pre id="account-details"></pre>
+  <h1>FitMap app</h1>
+
+  <ul>
+    <li>
+      <a href="privacy-policy.html">FitMap's Privacy Policy</a>
+    </li>
+    <li>
+      <a href="terms-conditions.html">FitMap's Terms &amp; Conditions</a>
+    </li>
+  </ul>
 
   <script>
-
-    initApp = function () {
-      firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          // User is signed in.
-          var displayName = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var uid = user.uid;
-          var phoneNumber = user.phoneNumber;
-          var providerData = user.providerData;
-          user.getIdToken().then(function (accessToken) {
-            document.getElementById('sign-in-status').textContent = 'Signed in';
-            document.getElementById('sign-in').textContent = 'Sign out';
-            document.getElementById('account-details').textContent = JSON.stringify({
-              displayName: displayName,
-              email: email,
-              emailVerified: emailVerified,
-              phoneNumber: phoneNumber,
-              photoURL: photoURL,
-              uid: uid,
-              accessToken: accessToken,
-              providerData: providerData
-            }, null, '  ');
-          });
-
-        } else {
-          // User is signed out.
-          document.getElementById('sign-in-status').textContent = 'Signed out';
-          document.getElementById('sign-in').textContent = 'Sign in';
-          document.getElementById('account-details').textContent = 'null';
-        }
-      }, function (error) {
-        console.log(error);
-      });
-    };
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-      try {
-
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-        ui.start('#firebaseui-auth-container', {
-          signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          ],
-          callbacks: {
-            signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-              return false;
-            },
-            uiShown: function () {
-              document.getElementById('loader').style.display = 'none';
-            }
-          }
-        });
-
-      } catch (e) {
-        console.error(e);
-      }
-    });
 
     window.addEventListener('load', function () {
       initApp();
