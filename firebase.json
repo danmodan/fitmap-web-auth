@@ -5,7 +5,10 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "i18n": {
+      "root": "/i18n"
+    }
   },
   "firestore": {
     "rules": "firestore.rules",

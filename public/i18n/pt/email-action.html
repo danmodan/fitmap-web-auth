@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+  <link rel="icon" href="img/fitmap-icon.png">
+  <title>FitMap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="container">
+
+  <div class="justify-content-center text-center">
+
+    <img class="d-block my-4 mx-auto" src="img/fitmap-icon.png" alt="" width="90" height="90">
+
+    <h1 class="fw-bold brand-name">FitMap</h1>
+
+    <p id="reset-pwd-header" class="visually-hidden lead teaser-phrase">Redefinir sua senha</p>
+
+    <p id="registration-confirmation-header" class="visually-hidden lead teaser-phrase">Confirmação de registro</p>
+
+    <div id="reset-pwd-form-container" class="visually-hidden">
+
+      <p id="user-email" class="lead teaser-phrase"></p>
+
+      <form id="reset-pwd-form">
+
+        <div class="mb-3 col-5 mx-auto">
+          <div class="input-group">
+            <input type="password" class="form-control" id="pwd-input" placeholder="New password" required>
+          </div>
+          <div id="pwd-input-error-msg" class="text-danger text-start visually-hidden"><i class="fas fa-times-circle"></i> Senha fraca</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+
+      </form>
+
+    </div>
+
+    <div id="spinner-loading">
+      <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Carregando...</span>
+      </div>
+    </div>
+
+    <div id="sucess-message" class="visually-hidden text-success lead teaser-phrase">
+      <p><i class="fas fa-check-circle"></i> Sucesso! Volte ao app.</p>
+    </div>
+
+    <div id="error-message" class="visually-hidden text-danger lead teaser-phrase">
+      <p><i class="fas fa-times-circle"></i> Link expirado!</p>
+    </div>
+
+  </div>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 my-4 border-top">
+
+    <p class="col-md-4 mb-0 text-muted">&copy; 2021 FitMap</p>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item"><a href="/privacy.html" class="nav-link px-2 text-muted">Privacidade</a></li>
+      <li class="nav-item"><a href="/terms.html" class="nav-link px-2 text-muted">Termos</a></li>
+    </ul>
+
+  </footer>
+
+  <script src="/__/firebase/8.9.1/firebase-app.js"></script>
+  <script src="/__/firebase/8.9.1/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="js/email-action.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+$font-family-sans-serif: Ubuntu, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$medium-blue: #0000D1;
+$oxford-blue: #050A30;
+$the-white: #FCFCFC;
+$ghost-white: #EAEAF0;
+$upsdell-red: #B00020;
+$persian-green: #1B998B;
+
+$primary: $medium-blue;
+$danger: $upsdell-red;
+$success: $persian-green;
+
+$body-bg: $ghost-white;
+$body-color: $oxford-blue;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.store-icons {
+    font-size: 4rem;
+    text-decoration: none;
+}
+
+.brand-name {
+    font-size: 4rem;
+}
+
+.teaser-phrase {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+}
+
+footer {
+    background-color: $ghost-white;
+}
